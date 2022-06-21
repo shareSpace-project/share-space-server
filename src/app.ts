@@ -1,10 +1,9 @@
 import express from 'express';
-// import userRouter from './router/userRouter';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import Mongoose from 'mongoose';
-
 import { Server } from 'socket.io';
+import userRouter from './Router/userRouter';
 
 dotenv.config();
 
@@ -30,7 +29,7 @@ Mongoose.connect(`${process.env.MONGODB_URI}`)
 app.use(cors({ origin: '*', credentials: true }));
 app.use(express.json());
 
-// app.use('/users', userRouter);
+app.use('/users', userRouter);
 
 app.use(express.static('public')); // public폴더 안에있는 모든 리소스를 가져갈 수 있음
 
