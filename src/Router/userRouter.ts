@@ -13,7 +13,7 @@ import {
   signup,
   signupIdCheck,
 } from '../Controller/userController';
-import { updateNickNameMiddleware } from '../Middleware/userMiddleware';
+import { updateNicknameMiddleware } from '../Middleware/userMiddleware';
 
 const router = express.Router();
 
@@ -32,7 +32,7 @@ router.post('/delete', deleteUser);
 // 내 유저 정보 불러오기
 router.get('/my', myUser);
 // 닉네임 변경
-router.put('/update/nickname', updateNickNameMiddleware, updateNickName);
+router.put('/update/nickname', updateNicknameMiddleware, updateNickName);
 // 프로필 변경
 router.put('/update/profile', updateProfile);
 // 패스워드 변경

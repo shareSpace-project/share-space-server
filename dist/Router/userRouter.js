@@ -23,7 +23,7 @@ router.post('/delete', userController_2.deleteUser);
 // 내 유저 정보 불러오기
 router.get('/my', userController_1.myUser);
 // 닉네임 변경
-router.put('/update/nickname', userMiddleware_1.updateNickNameMiddleware, userController_1.updateNickName);
+router.put('/update/nickname', userMiddleware_1.updateNicknameMiddleware, userController_1.updateNickName);
 // 프로필 변경
 router.put('/update/profile', userController_1.updateProfile);
 // 패스워드 변경

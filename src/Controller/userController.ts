@@ -49,7 +49,7 @@ export const signup = async (req: Request, res: Response) => {
   let temp = {
     id: req.body.id,
     password: hashed,
-    nickName: req.body.nickName,
+    nickname: req.body.nickname,
     profile: req.body.profile,
   };
   const userSignup = new User(temp);
@@ -130,7 +130,7 @@ export const updateNickName = (req: Request, res: Response) => {
     { _id: req.body.id },
     {
       $set: {
-        nickName: req.body.nickName,
+        nickname: req.body.nickname,
       },
     },
     { new: true },

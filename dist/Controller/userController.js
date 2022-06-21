@@ -62,7 +62,7 @@ const signup = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let temp = {
         id: req.body.id,
         password: hashed,
-        nickName: req.body.nickName,
+        nickname: req.body.nickname,
         profile: req.body.profile,
     };
     const userSignup = new userModel_1.default(temp);
@@ -141,7 +141,7 @@ exports.myUser = myUser;
 const updateNickName = (req, res) => {
     userModel_1.default.findOneAndUpdate({ _id: req.body.id }, {
         $set: {
-            nickName: req.body.nickName,
+            nickname: req.body.nickname,
         },
     }, { new: true })
         .exec()
